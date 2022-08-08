@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Loteria {
 	private int[] resultados = {0, 0, 0, 0, 0, 0};
 	private int[] numerosJugados = {0, 0, 0, 0, 0, 0};
-	private int aciertos = 0;
+	private Integer aciertos = 0;
 	
 	public void reiniciarLoteria() {
 		for(int i = 0; i < resultados.length; i++) {

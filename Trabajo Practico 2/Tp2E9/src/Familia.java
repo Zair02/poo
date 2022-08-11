@@ -2,18 +2,40 @@ import java.util.ArrayList;
 
 public class Familia {
 	private ArrayList<Persona> miembros = new ArrayList<Persona>();
-	private static Integer censadas = 0;
+	private Boolean censada;
+	
+	public Familia(Boolean censada) {
+		this.censada = censada;
+	}
 	
 	public Familia() {
-		censadas++;
+		
 	}
 
 	public void añadirMiembro(Persona persona) {
 		this.miembros.add(persona);
 	}
+	
+	public Integer persTrabajando() {
+		Integer cant = 0;
+		for (Persona persona : miembros) {
+			if(persona.getTrabaja()) {
+				cant++;
+			}
+		}
+		return cant;
+	}
 
-	public static Integer getCensadas() {
-		return censadas;
+	public Boolean getCensada() {
+		return censada;
+	}
+	
+	public void setCensada(Boolean censada) {
+		this.censada = censada;
+	}
+	
+	public ArrayList<Persona> getMiembros(){
+		return miembros;
 	}
 	
 }

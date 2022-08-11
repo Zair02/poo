@@ -3,49 +3,39 @@ public class Persona {
 	private Integer edad;
 	private Character sexo;
 	private Boolean estudia, trabaja;
-	private static Integer censadas = 0;
-	private static Integer cantidadTrabajan = 0;
-	private static Double sumaEdades = 0.0;
 
 	public Persona(Integer edad, Character sexo, Boolean estudia, Boolean trabaja) {
-		super();
 		this.edad = edad;
 		this.sexo = sexo;
 		this.estudia = estudia;
-		this.trabaja = trabaja;
-		censadas++;
-		sumaEdades += (double)edad;
-		if (trabaja) {
-			cantidadTrabajan++;
-		}
+		this.trabaja = trabaja; 
+	}
+	
+	public Persona() {
+		
 	}
 
 	public Integer getEdad() {
 		return edad;
 	}
 
-	public Character getSexo() {
-		return sexo;
-	}
-
-	public Boolean getEstudia() {
-		return estudia;
-	}
-
 	public Boolean getTrabaja() {
 		return trabaja;
 	}
-
-	public static Integer getCensadas() {
-		return censadas;
+	
+	public void setEdad(Integer edad) {
+		this.edad = edad;
 	}
 	
-	public static Integer getCantidadTrabajan() {
-		return cantidadTrabajan;
+	public void setSexo(Character sexo) {
+		this.sexo = sexo;
 	}
 	
-	public static Double promedioEdades() {
-		return sumaEdades/(double)censadas;
+	public void setTrabaja(Boolean trabaja) {
+		this.trabaja = trabaja;
 	}
 	
+	public void setEstudia(Boolean estudia) {
+		this.estudia = estudia;
+	}
 }

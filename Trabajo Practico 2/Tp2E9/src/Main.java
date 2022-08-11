@@ -1,33 +1,40 @@
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
 	
 	public static void main(String[] args) {
-		Familia familia1 = new Familia();
-		Familia familia2 = new Familia();
-		Familia familia3 = new Familia();
-		
-		Persona persona1 = new Persona(44, 'M', false, true);
-		Persona persona2 = new Persona(42, 'F', false, true);
-		Persona persona3 = new Persona(19, 'M', true, false);
-		Persona persona4 = new Persona(15, 'F', true, false);
-		Persona persona5 = new Persona(29, 'F', true, true);
-		Persona persona6 = new Persona(28, 'M', true, true);		
-		Persona persona7 = new Persona(23, 'M', true, false);
-		
-		familia1.añadirMiembro(persona1);
-		familia1.añadirMiembro(persona2);
-		familia1.añadirMiembro(persona3);
-		familia1.añadirMiembro(persona4);
-		
-		familia2.añadirMiembro(persona5);
-		familia2.añadirMiembro(persona6);
-		
-		familia3.añadirMiembro(persona7);
-		
-		System.out.println("Familias censadas: " + Familia.getCensadas());
-		System.out.println("Personas censadas: " + Persona.getCensadas());
-		System.out.println("Personas que trabajan: " + Persona.getCantidadTrabajan());
-		System.out.println("Promedio de edad obtenido: " + Persona.promedioEdades());
+		ArrayList<Familia> familias = generarFamilias();
+		Censo censo = new Censo();
+		censo.calcularDatos(familias);
+		censo.imprimirDatos();
 		
 	}
+	
+	public static ArrayList<Familia> generarFamilias(){
+		ArrayList<Familia> familias = new ArrayList<Familia>();
+		Random rnd = new Random();
+		
+		for(int i = 0; i < 4; i++) {
+			Familia familia = new Familia();
+			familia.setCensada(rnd.nextBoolean());
+			System.out.println("\rFamilia " + i + "\tCensada: " + familia.getCensada());
+			int miembros = rnd.nextInt(1, 6);
+			if (familia.getCensada()) {
+				for (int j = 0; j < miembros; j++) {
+					Persona persona = new Persona();
+					persona.setEdad(rnd.nextInt(1, 100));
+					persona.setEstudia(rnd.nextBoolean());
+					persona.setTrabaja(rnd.nextBoolean());
+					persona.setSexo("MF".charAt(rnd.nextInt(0, 2)));
+					familia.añadirMiembro(persona);
+					System.out.println("Persona " + j + "\tEdad: " + persona.getEdad() + "\tTrabaja: " + persona.getTrabaja());
+				}
+			}
+			familias.add(familia);
+		}
+		return familias;
+	}
+	
+	
 }

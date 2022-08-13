@@ -8,7 +8,6 @@ public class Main {
 		Censo censo = new Censo();
 		censo.calcularDatos(familias);
 		censo.imprimirDatos();
-		
 	}
 	
 	public static ArrayList<Familia> generarFamilias(){

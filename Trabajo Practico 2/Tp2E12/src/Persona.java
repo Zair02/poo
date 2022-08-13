@@ -5,25 +5,26 @@ public class Persona {
 	private String nombre;
 	private String apellido;
 	private LocalDate fechaNacimiento;
-	
-	
-	public Persona(String nombre, String apellido, LocalDate fechaNacimiento; Puesto puesto) {
+	private Puesto puesto;
+		
+	public Persona(String nombre, String apellido, LocalDate fechaNacimiento, Puesto puesto) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.fechaNacimiento = fechaNacimiento;
+		this.puesto = puesto;
 	}
-	
+		
 	public String toString() {
-		return "Nombre: " + nombre + "\tApellido: " + apellido + 
+		return "Nombre: " + nombre + "\tApellido: " + apellido + "\tPuesto: " + puesto.getNombre() +
 				"\rFecha de nacimiento: " + fechaNacimiento + "\tEdad: " + calcularEdad();
 	}
-	
+		
 	public Integer calcularEdad() {
 		return LocalDate.now().minusYears(fechaNacimiento.getYear()).getYear();
 	}
-
-	public String getNombre() {
+	
+	public String getNombre() {	
 		return nombre;
 	}
 

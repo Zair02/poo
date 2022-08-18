@@ -22,7 +22,6 @@ public class Controlador {
 	
 	private void borrarContenido() {
 		this.modelo.borrarContenido();
-		this.vista.getInputContraseña().setText(this.modelo.getContraseña());;
-		
+		this.vista.getInputContraseña().setText(this.modelo.getContraseña());	
 	}
 }

@@ -40,8 +40,8 @@ public class Vista {
 		this.panelInferior.add(this.botonSaludar);
 	}
 	
-	public void generarSaludo() {
-		JOptionPane.showMessageDialog(frame, "Hola, " + inputNombre.getText() + "!");
+	public void generarSaludo(String mensaje) {
+		JOptionPane.showMessageDialog(frame, mensaje);
 	}
 	
 	public void mostrar() {

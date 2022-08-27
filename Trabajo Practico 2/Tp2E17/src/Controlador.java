@@ -3,9 +3,7 @@ public class Controlador {
 	private Vista vista = new Vista();
 	private Modelo modelo = new Modelo();
 	
-	public Controlador(Modelo modelo, Vista vista) {
-		this.modelo = modelo;
-		this.vista = vista;
+	public Controlador() {
 		this.inicializarVista();
 	}
 	

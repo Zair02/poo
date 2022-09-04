@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Combate {
 	
-	private Integer nroTurno = 1;
+	private Integer nroTurno;
 	private Boolean finCombate;
 	
 	public Combate() {
@@ -11,6 +11,7 @@ public class Combate {
 	
 	public void combatir(Personaje pers1, Personaje pers2) {
 		finCombate = false;
+		nroTurno = 1;
 		while(!finCombate) {
 			System.out.println("\rTurno: " + nroTurno);
 			Random rdm = new Random();

@@ -26,7 +26,7 @@ public class Main {
 		carpeta3.añadirElemento(archivo5);
 		carpeta3.añadirElemento(archivo6);
 		
-		carpeta1.mostrarElementos();
+		carpeta1.getInfo();
 	}
 	
 }

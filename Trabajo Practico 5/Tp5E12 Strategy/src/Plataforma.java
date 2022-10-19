@@ -5,8 +5,7 @@ public class Plataforma {
 	private ArrayList<Pelicula> catalogo = new ArrayList<Pelicula>();
 	private Cuenta cuentaActiva;
 
-	public Plataforma() {
-		
+	public Plataforma() {	
 	}
 	
 	public void añadirPeli(Pelicula pelicula) {

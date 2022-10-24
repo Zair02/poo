@@ -38,10 +38,6 @@ public class Boya extends Thread{
 				System.out.println("Error: " + this.nombre + " " + e.getMessage());
 			}
 		}
-		this.enviarNulo();
-	}
-
-	private void enviarNulo() {
 		this.servidor.almacenar(null);
 	}
 	

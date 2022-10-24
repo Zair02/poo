@@ -31,6 +31,7 @@ public class Servidor {
 		if (paquete != null) {
 			System.out.println("CONSULTO " + paquete.toString());
 		}
+		notifyAll();
 		return paquete;
 	}
 	
